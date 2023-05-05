@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 
-namespace Joutvhu.AspNet.RestJsonData
+namespace Joutvhu.AspNet.FromJson
 {
     class FormJsonConverter : JsonConverter
     {

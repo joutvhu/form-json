@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Joutvhu.AspNet.RestJsonData
+namespace Joutvhu.AspNet.FromJson
 {
     public static class FormJsonBinderProviderExtension
     {

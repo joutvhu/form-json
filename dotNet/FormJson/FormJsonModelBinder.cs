@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 
-namespace Joutvhu.AspNet.RestJsonData
+namespace Joutvhu.AspNet.FromJson
 {
     public class JsonDataModelBinder : IModelBinder
     {

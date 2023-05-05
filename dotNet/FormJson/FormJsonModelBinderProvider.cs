@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
-namespace Joutvhu.AspNet.RestJsonData
+namespace Joutvhu.AspNet.FromJson
 {
     public class JsonDataModelBinderProvider : IModelBinderProvider
     {
