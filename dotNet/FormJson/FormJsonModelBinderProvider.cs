@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
 namespace Joutvhu.AspNet.FromJson
 {
-    public class JsonDataModelBinderProvider : IModelBinderProvider
+    public class FormJsonModelBinderProvider : IModelBinderProvider
     {
         public IModelBinder GetBinder(ModelBinderProviderContext context)
         {
@@ -29,7 +29,7 @@ namespace Joutvhu.AspNet.FromJson
 
                 if (isFormJson)
                 {
-                    return new BinderTypeModelBinder(typeof(JsonDataModelBinder));
+                    return new BinderTypeModelBinder(typeof(FormJsonModelBinder));
                 }
             }
 

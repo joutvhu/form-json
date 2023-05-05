@@ -4,10 +4,17 @@
 builder.Services
     .AddControllers(options =>
     {
-        options.AddFormJsonBinderProvider();
+        options.AddFormJsonModelBinderProvider();
     });
 ```
 
-# Using
+## Using
 
-Add `[FormJson]` before the param
+Add `[FormJson]` attribute before the parameter
+
+```c#
+public async Task<PropertyResult> CreateProperty([FormJson] PropertyRequest data)
+{
+    ...
+}
+```

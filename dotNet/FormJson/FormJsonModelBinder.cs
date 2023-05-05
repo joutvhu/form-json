@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Joutvhu.AspNet.FromJson
 {
-    public class JsonDataModelBinder : IModelBinder
+    public class FormJsonModelBinder : IModelBinder
     {
         public async Task BindModelAsync(ModelBindingContext bindingContext)
         {
