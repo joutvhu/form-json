@@ -4,6 +4,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageVersion>1.0.0</PackageVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageProjectUrl>https://github.com/joutvhu/form-json/tree/main/dotNet</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/joutvhu/form-json/blob/main/LICENSE</PackageLicenseUrl>
+        <RepositoryUrl>https://github.com/joutvhu/form-json</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>

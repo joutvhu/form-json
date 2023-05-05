@@ -1,0 +1,39 @@
+name: Publish NuGet Package
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: Create NuGet package
+        run: dotnet pack --configuration Release --output ./nuget
+        working-directory: ./dotNet
+
+      - name: Install NuGet validator
+        run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
+
+      - name: Validate package
+        run: meziantou.validate-nuget-package (Get-ChildItem "./nuget/*.nupkg")
+        working-directory: ./dotNet
+
+      - name: Run tests
+        run: dotnet test --configuration Release
+        working-directory: ./dotNet
+
+      - name: Publish NuGet package
+        run: |
+          foreach($file in (Get-ChildItem "./nuget" -Recurse -Include *.nupkg)) {
+            dotnet nuget push $file --api-key "${{ secrets.NUGET_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+          }
+        working-directory: ./dotNet
