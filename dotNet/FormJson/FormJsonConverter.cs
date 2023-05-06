@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace Joutvhu.AspNet.FromJson
 {
-    class FormJsonConverter : JsonConverter
+    internal class FormJsonConverter : JsonConverter
     {
         private IFormFileCollection _fileCollection;
 
