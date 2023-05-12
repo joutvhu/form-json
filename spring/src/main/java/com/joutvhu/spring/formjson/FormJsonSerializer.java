@@ -8,7 +8,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.Path;
 import java.util.List;
 
 public class FormJsonSerializer extends JsonSerializer<MultipartFile> {
@@ -59,11 +58,6 @@ public class FormJsonSerializer extends JsonSerializer<MultipartFile> {
 
             @Override
             public void transferTo(File dest) throws IOException, IllegalStateException {
-                multipartFile.transferTo(dest);
-            }
-
-            @Override
-            public void transferTo(Path dest) throws IOException, IllegalStateException {
                 multipartFile.transferTo(dest);
             }
         });
