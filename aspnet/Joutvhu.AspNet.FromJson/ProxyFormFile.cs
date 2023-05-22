@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 namespace Joutvhu.AspNet.FromJson
 {
     /// <summary>
-    /// 
+    /// A proxy object of <see cref="T:Microsoft.AspNetCore.Http.IFormFile"/>
     /// </summary>
     internal class ProxyFormFile : IFormFile
     {
