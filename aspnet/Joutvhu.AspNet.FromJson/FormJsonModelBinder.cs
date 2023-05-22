@@ -5,9 +5,11 @@ using Newtonsoft.Json;
 
 namespace Joutvhu.AspNet.FromJson
 {
+    /// <inheritdoc />
     public class FormJsonModelBinder : IModelBinder
     {
-        public async Task BindModelAsync(ModelBindingContext bindingContext)
+        /// <inheritdoc />
+        public Task BindModelAsync(ModelBindingContext bindingContext)
         {
             if (bindingContext == null)
             {
@@ -33,6 +35,7 @@ namespace Joutvhu.AspNet.FromJson
                 bindingContext.Model = null;
                 bindingContext.Result = ModelBindingResult.Success(null);
             }
+            return Task.CompletedTask;
         }
     }
 }

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <PackageId>Joutvhu.AspNet.FromJson</PackageId>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <Description>Support upload files with JSON data</Description>
+        <PackageVersion>1.0.0</PackageVersion>
+        <Authors>Giao Ho</Authors>
+        <Copyright>Copyright (c) 2023 Giáo Hồ</Copyright>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/joutvhu/form-json.git</RepositoryUrl>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <PackageProjectUrl>https://github.com/joutvhu/form-json/tree/main/dotNet</PackageProjectUrl>
+        <LicenseUrl>https://github.com/joutvhu/form-json/blob/main/LICENSE</LicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>upload;file;json;form-data</PackageTags>
+        <LangVersion>10</LangVersion>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <RootNamespace>Joutvhu.AspNet.FromJson</RootNamespace>
+        <AssemblyName>Joutvhu.AspNet.FromJson</AssemblyName>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <EnablePackageValidation>false</EnablePackageValidation>
+        <PackageValidationBaselineVersion>13.0.1</PackageValidationBaselineVersion>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <DocumentationFile>bin\Release\Joutvhu.AspNet.FromJson.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="../README.md" Pack="true" PackagePath="/" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" IncludeAssets="compile" />
+    </ItemGroup>
+
+</Project>

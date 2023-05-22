@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Metadata;
 
 namespace Joutvhu.AspNet.FromJson
 {
+    /// <inheritdoc />
     public class FormJsonModelBinderProvider : IModelBinderProvider
     {
+        /// <inheritdoc />
         public IModelBinder GetBinder(ModelBinderProviderContext context)
         {
             if (context == null)

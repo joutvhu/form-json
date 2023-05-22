@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Newtonsoft.Json;
 
@@ -7,7 +8,7 @@ namespace Joutvhu.AspNet.FromJson
 {
     internal class FormJsonConverter : JsonConverter
     {
-        private IFormFileCollection _fileCollection;
+        private readonly IFormFileCollection _fileCollection;
 
         public FormJsonConverter(IFormFileCollection fileCollection)
         {
