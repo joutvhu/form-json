@@ -24,6 +24,8 @@ namespace Joutvhu.AspNet.FromJson
             _files = files;
         }
 
+        public IList<IFormFile> Files => _files;
+
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             if (value is IFormFile formFile)
