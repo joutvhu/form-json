@@ -7,8 +7,8 @@ on:
         type: choice
         description: Should validate nupkg?
         options:
-          - yes
-          - no
+          - true
+          - false
 
 jobs:
   build:
@@ -28,11 +28,11 @@ jobs:
         working-directory: ./aspnet
 
       - name: Install NuGet validator
-        if: ${{ github.event.inputs.validate == 'yes' }}
+        if: ${{ github.event.inputs.validate == true }}
         run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
 
       - name: Validate package
-        if: ${{ github.event.inputs.validate == 'yes' }}
+        if: ${{ github.event.inputs.validate == true }}
         run: meziantou.validate-nuget-package (Get-ChildItem "./nuget/*.nupkg")
         working-directory: ./aspnet
 
