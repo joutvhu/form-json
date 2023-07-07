@@ -21,7 +21,7 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <RootNamespace>Joutvhu.AspNet.FromJson</RootNamespace>
         <AssemblyName>Joutvhu.AspNet.FromJson</AssemblyName>
-        <IncludeSymbols>true</IncludeSymbols>
+        <IncludeSymbols>false</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <EnablePackageValidation>false</EnablePackageValidation>

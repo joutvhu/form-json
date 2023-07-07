@@ -2,6 +2,13 @@ name: Publish NuGet Package
 
 on:
   workflow_dispatch:
+    inputs:
+      validate:
+        type: choice
+        description: Should validate nupkg?
+        options:
+          - yes
+          - no
 
 jobs:
   build:
@@ -21,9 +28,11 @@ jobs:
         working-directory: ./aspnet
 
       - name: Install NuGet validator
+        if: ${{ github.event.inputs.validate == 'yes' }}
         run: dotnet tool update Meziantou.Framework.NuGetPackageValidation.Tool --global
 
       - name: Validate package
+        if: ${{ github.event.inputs.validate == 'yes' }}
         run: meziantou.validate-nuget-package (Get-ChildItem "./nuget/*.nupkg")
         working-directory: ./aspnet
 
