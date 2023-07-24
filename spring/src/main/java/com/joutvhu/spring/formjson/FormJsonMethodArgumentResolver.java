@@ -9,8 +9,6 @@ import org.springframework.web.method.annotation.AbstractNamedValueMethodArgumen
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartRequest;
 
-import java.util.List;
-
 public class FormJsonMethodArgumentResolver extends AbstractNamedValueMethodArgumentResolver {
     @Override
     protected NamedValueInfo createNamedValueInfo(MethodParameter parameter) {

@@ -25,7 +25,7 @@ jobs:
 
       - name: Create NuGet package
         run: dotnet pack --configuration Release --output ./nuget
-        working-directory: ./aspnet
+        working-directory: aspnet
 
       - name: Install NuGet validator
         if: ${{ github.event.inputs.validate == true }}
@@ -34,15 +34,15 @@ jobs:
       - name: Validate package
         if: ${{ github.event.inputs.validate == true }}
         run: meziantou.validate-nuget-package (Get-ChildItem "./nuget/*.nupkg")
-        working-directory: ./aspnet
+        working-directory: aspnet
 
       - name: Run tests
         run: dotnet test --configuration Release
-        working-directory: ./aspnet
+        working-directory: aspnet
 
       - name: Publish NuGet package
         run: |
           foreach($file in (Get-ChildItem "./nuget" -Recurse -Include *.nupkg)) {
             dotnet nuget push $file --api-key "${{ secrets.NUGET_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
           }
-        working-directory: ./aspnet
+        working-directory: aspnet
