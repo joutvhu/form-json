@@ -1,0 +1,34 @@
+name: Publish package to pub.dev
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Current Release
+        id: current_release
+        uses: joutvhu/get-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@v1
+
+      - name: Setup Credentials
+        uses: joutvhu/write-file@v1
+        with:
+          path: ~/.config/dart/pub-credentials.json
+          contents: ${{ secrets.PUB_CREDENTIALS }}
+          write_mode: overwrite
+
+      - name: Install dependencies
+        run: dart pub get
+        working-directory: dio
+
+      - name: Publish package
+        run: dart pub publish -f
+        working-directory: dio

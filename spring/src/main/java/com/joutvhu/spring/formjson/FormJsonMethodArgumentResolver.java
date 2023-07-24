@@ -25,11 +25,10 @@ public class FormJsonMethodArgumentResolver extends AbstractNamedValueMethodArgu
             String dataValue = request.getParameter(name);
             if (dataValue != null) {
                 Class<?> modelType = parameter.getParameterType();
-                List<MultipartFile> files = multipartRequest.getFiles(name);
 
                 ObjectMapper mapper = new ObjectMapper();
                 SimpleModule module = new SimpleModule();
-                module.addDeserializer(MultipartFile.class, new FormJsonDeserializer(files));
+                module.addDeserializer(MultipartFile.class, new FormJsonDeserializer(multipartRequest));
                 mapper.registerModule(module);
 
                 return mapper.readValue(dataValue, modelType);
