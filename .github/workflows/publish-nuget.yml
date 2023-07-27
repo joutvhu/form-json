@@ -1,6 +1,8 @@
 name: Publish NuGet Package
 
 on:
+  release:
+    types: [created]
   workflow_dispatch:
     inputs:
       validate:
@@ -11,9 +13,29 @@ on:
           - false
 
 jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    outputs:
+      continue: ${{ steps.should_continue.outputs.continue }}
+    steps:
+      - name: Get Current Release
+        id: current_release
+        uses: joutvhu/get-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Should continue
+        id: should_continue
+        run: |
+          echo "::set-output name=continue::$(echo ${{ contains(steps.current_release.outputs.tag_name, '_aspnet') || !contains(steps.current_release.outputs.tag_name, '_') }})"
+
   build:
     runs-on: windows-latest
-
+    needs: prepare
+    if: ${{ needs.prepare.outputs.continue }}
     steps:
       - uses: actions/checkout@v3
 
