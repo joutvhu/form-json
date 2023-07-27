@@ -30,12 +30,12 @@ jobs:
       - name: Should continue
         id: should_continue
         run: |
-          echo "::set-output name=continue::$(echo ${{ contains(steps.current_release.outputs.tag_name, '_aspnet') || !contains(steps.current_release.outputs.tag_name, '_') }})"
+          echo "::set-output name=continue::${{ github.event_name == 'workflow_dispatch' || contains(steps.current_release.outputs.tag_name, '_aspnet') || !contains(steps.current_release.outputs.tag_name, '_') }}"
 
   build:
     runs-on: windows-latest
     needs: prepare
-    if: ${{ needs.prepare.outputs.continue }}
+    if: ${{ needs.prepare.outputs.continue == 'true' }}
     steps:
       - uses: actions/checkout@v3
 
