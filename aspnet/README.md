@@ -15,7 +15,7 @@ builder.Services
         options.AddFormJsonModelBinderProvider();
     });
 ```
-s
+
 ## Using
 
 Add `[FormJson]` attribute before the parameter
