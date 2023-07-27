@@ -64,17 +64,17 @@ jobs:
         run: ./gradlew clean builds
         working-directory: spring
 
-    #   - name: Get Current Release
-    #     id: get_current_release
-    #     uses: joutvhu/get-release@v1
-    #     env:
-    #       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #     working-directory: ./spring
+      - name: Get Current Release
+        id: get_current_release
+        uses: joutvhu/get-release@v1
+        if: ${{ github.event_name == 'release' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to Sonatype Packages
         run: ./gradlew publishMavenPublicationToSonatypeRepository
 
-    #   - name: Publish to GitHub Packages
-    #     if: ${{ steps.get_current_release.outputs.prerelease == 'false' && steps.get_current_release.outputs.draft == 'false' }}
-    #     run: ./gradlew publishMavenPublicationToGithubRepository
-    #     working-directory: ./spring
+      - name: Publish to GitHub Packages
+        if: ${{ github.event_name == 'release' && steps.get_current_release.outputs.prerelease == 'false' && steps.get_current_release.outputs.draft == 'false' }}
+        run: ./gradlew publishMavenPublicationToGithubRepository
+        working-directory: spring
