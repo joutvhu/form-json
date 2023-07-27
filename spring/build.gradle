@@ -119,7 +119,7 @@ publishing {
 
             pom {
                 name = project.name
-                description = ''
+                description = 'Support upload files with JSON data'
                 url = 'https://github.com/joutvhu/form-json'
                 licenses {
                     license {

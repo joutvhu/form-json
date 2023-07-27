@@ -1,7 +1,7 @@
 {
   "name": "@joutvhu/form-json",
   "version": "1.0.1",
-  "description": "",
+  "description": "Support upload files with JSON data",
   "scripts": {
     "build": "npm run build:declaration && npm run build:rollup && npm run build:esm2015 && npm run build:esm2020 && npm run build:esm2022",
     "build:declaration": "tsc --project tsconfig.json --declaration true --declarationDir . --emitDeclarationOnly",
