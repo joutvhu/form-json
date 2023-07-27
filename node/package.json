@@ -1,6 +1,6 @@
 {
   "name": "@joutvhu/form-json",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "scripts": {
     "build": "npm run build:declaration && npm run build:rollup && npm run build:esm2015 && npm run build:esm2020 && npm run build:esm2022",
