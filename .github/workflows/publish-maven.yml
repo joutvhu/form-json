@@ -61,7 +61,7 @@ jobs:
         working-directory: spring
 
       - name: Build with Gradle
-        run: ./gradlew clean builds
+        run: ./gradlew clean build
         working-directory: spring
 
       - name: Get Current Release
@@ -73,6 +73,7 @@ jobs:
 
       - name: Publish to Sonatype Packages
         run: ./gradlew publishMavenPublicationToSonatypeRepository
+        working-directory: spring
 
       - name: Publish to GitHub Packages
         if: ${{ github.event_name == 'release' && steps.get_current_release.outputs.prerelease == 'false' && steps.get_current_release.outputs.draft == 'false' }}
