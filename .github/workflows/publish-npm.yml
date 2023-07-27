@@ -26,7 +26,7 @@ jobs:
       - name: Should continue
         id: should_continue
         run: |
-          echo "::set-output name=continue::$(echo ${{ contains(steps.current_release.outputs.tag_name, '_node') || !contains(steps.current_release.outputs.tag_name, '_') }})"
+          echo "::set-output name=continue::$(echo ${{ github.event_name == 'workflow_dispatch' || contains(steps.current_release.outputs.tag_name, '_node') || !contains(steps.current_release.outputs.tag_name, '_') }})"
 
   publish:
     runs-on: ubuntu-latest
