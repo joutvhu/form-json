@@ -32,6 +32,8 @@ ext {
     ]
     otherVersions = [
     ]
+    optionalDependencies = [
+    ]
 }
 
 dependencyManagement {
@@ -81,6 +83,10 @@ jar {
             it.replace('pom-default.xml', 'pom.xml')
         }
     }
+}
+
+bootJar {
+    enabled = false
 }
 
 task fatJar(type: Jar) {
@@ -176,6 +182,10 @@ publishing {
                             dependencyNode.appendNode('artifactId', it.name)
                             if (it.version != null) {
                                 dependencyNode.appendNode('version', it.version)
+                            }
+                            def key = "${it.group}:${it.name}"
+                            if (project.ext.optionalDependencies.any { el -> el.contains(key) }) {
+                                dependencyNode.appendNode('optional', true)
                             }
                         }
                     }
