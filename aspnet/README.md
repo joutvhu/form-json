@@ -1,5 +1,13 @@
 ## Setup
 
+- Install dependency
+
+```
+dotnet add package Joutvhu.AspNet.FromJson --version 1.0.0
+```
+
+- Add model binder provider.
+
 ```c#
 builder.Services
     .AddControllers(options =>
@@ -7,7 +15,7 @@ builder.Services
         options.AddFormJsonModelBinderProvider();
     });
 ```
-
+s
 ## Using
 
 Add `[FormJson]` attribute before the parameter
