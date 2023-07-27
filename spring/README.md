@@ -1,5 +1,19 @@
 ## Setup
 
+- Install dependency
+
+```
+implementation 'com.github.joutvhu:spring-form-json:1.30.0'
+```
+
+```
+<dependency>
+    <groupId>com.github.joutvhu</groupId>
+    <artifactId>spring-form-json</artifactId>
+    <version>1.30.0</version>
+</dependency>
+```
+
 - Add `FormJsonMethodArgumentResolver` to resolvers.
 
 ```java
