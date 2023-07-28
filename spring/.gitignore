@@ -48,6 +48,9 @@ buildNumber.properties
 .springBeans
 .sts4-cache
 
+## Fast Request ##
+.fastRequest
+
 ### IntelliJ IDEA ###
 .idea
 .idea_modules
