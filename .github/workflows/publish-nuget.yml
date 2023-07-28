@@ -84,6 +84,6 @@ jobs:
         run: |
           dotnet nuget add source --username joutvhu --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/joutvhu/form-json/index.json"
           foreach($file in (Get-ChildItem "./nuget" -Recurse -Include *.nupkg)) {
-            dotnet nuget push $file --api-key "${{ secrets.GITHUB_TOKEN }}" --source "github" --skip-duplicate
+            dotnet nuget push $file --api-key "${{ secrets.GH_PKG_PAT }}" --source "github" --skip-duplicate
           }
         working-directory: aspnet
