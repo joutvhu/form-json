@@ -36,6 +36,9 @@ jobs:
     runs-on: windows-latest
     needs: prepare
     if: ${{ needs.prepare.outputs.continue == 'true' }}
+    permissions:
+      contents: read
+      packages: write
     steps:
       - uses: actions/checkout@v3
 
@@ -79,7 +82,8 @@ jobs:
       - name: Publish to GitHub Registry
         # if: ${{ github.event_name == 'release' && steps.get_current_release.outputs.prerelease == 'false' && steps.get_current_release.outputs.draft == 'false' }}
         run: |
+          dotnet nuget add source --username joutvhu --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/joutvhu/form-json/index.json"
           foreach($file in (Get-ChildItem "./nuget" -Recurse -Include *.nupkg)) {
-            dotnet nuget push $file --username joutvhu --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github --source https://nuget.pkg.github.com/joutvhu/form-json/index.json --skip-duplicate
+            dotnet nuget push $file --source "github" --skip-duplicate
           }
         working-directory: aspnet
