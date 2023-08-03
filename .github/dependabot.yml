@@ -11,6 +11,8 @@ updates:
       interval: "weekly"
     assignees:
       - "joutvhu"
+    reviewers:
+      - "joutvhu"
     labels:
       - "dependency"
 
@@ -19,6 +21,8 @@ updates:
     schedule:
       interval: "weekly"
     assignees:
+      - "joutvhu"
+    reviewers:
       - "joutvhu"
     labels:
       - "dependency"
@@ -33,6 +37,8 @@ updates:
           - "version-update:semver-major"
     assignees:
       - "joutvhu"
+    reviewers:
+      - "joutvhu"
     labels:
       - "dependency"
 
@@ -41,6 +47,8 @@ updates:
     schedule:
       interval: "weekly"
     assignees:
+      - "joutvhu"
+    reviewers:
       - "joutvhu"
     labels:
       - "dependency"
