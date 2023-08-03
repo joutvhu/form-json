@@ -1,0 +1,46 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "spring/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "joutvhu"
+    labels:
+      - "dependency"
+
+  - package-ecosystem: "nuget"
+    directory: "aspnet/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "joutvhu"
+    labels:
+      - "dependency"
+
+  - package-ecosystem: "npm"
+    directory: "node/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "@types/node"
+        update-types:
+          - "version-update:semver-major"
+    assignees:
+      - "joutvhu"
+    labels:
+      - "dependency"
+
+  - package-ecosystem: "pub"
+    directory: "dio/"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "joutvhu"
+    labels:
+      - "dependency"
