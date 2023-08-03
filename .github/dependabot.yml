@@ -15,6 +15,7 @@ updates:
       - "joutvhu"
     labels:
       - "dependency"
+      - "spring"
 
   - package-ecosystem: "nuget"
     directory: "aspnet/"
@@ -26,6 +27,7 @@ updates:
       - "joutvhu"
     labels:
       - "dependency"
+      - "aspnet"
 
   - package-ecosystem: "npm"
     directory: "node/"
@@ -41,6 +43,7 @@ updates:
       - "joutvhu"
     labels:
       - "dependency"
+      - "node"
 
   - package-ecosystem: "pub"
     directory: "dio/"
@@ -52,3 +55,4 @@ updates:
       - "joutvhu"
     labels:
       - "dependency"
+      - "dio"
