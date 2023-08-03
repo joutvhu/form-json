@@ -24,7 +24,7 @@ class FormJson extends FormData {
         return null;
       },
     );
-    fields.add(MapEntry('data', data ?? ''));
+    fields.add(MapEntry('data', data));
   }
 }
 
