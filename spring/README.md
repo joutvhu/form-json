@@ -14,6 +14,13 @@ implementation 'com.github.joutvhu:spring-form-json:1.30.0'
 </dependency>
 ```
 
+- Version compatibility matrix
+
+| Spring Form JSON Version | Spring Boot Version |
+|:-------------------------|:-------------------:|
+| 1.25.0                   | 2.5.x - 2.7.x       |
+| 1.30.0                   | >= 3.0.0             |
+
 - Add `FormJsonMethodArgumentResolver` to resolvers.
 
 ```java
