@@ -1,6 +1,6 @@
 # Form Json
 
-Support upload files with JSON data.
+Support for files upload with JSON data for Rest API.
 
 ## How It Works
 
