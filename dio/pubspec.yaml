@@ -5,7 +5,7 @@ homepage: https://github.com/joutvhu/form_json
 repository: https://github.com/joutvhu/form_json/tree/main/dio
 
 environment:
-  sdk: '>=2.15.0'
+  sdk: '>=2.15.0 <4.0.0'
 
 # Dart Scripts Runner plugin https://github.com/joutvhu/dart-scripts
 scripts:
