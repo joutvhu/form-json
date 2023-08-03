@@ -6,29 +6,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      packages: write
-    outputs:
-      continue: ${{ steps.should_continue.outputs.continue }}
-    steps:
-      - name: Get Current Release
-        id: current_release
-        uses: joutvhu/get-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Should continue
-        id: should_continue
-        run: |
-          echo "::set-output name=continue::${{ github.event_name == 'workflow_dispatch' || contains(steps.current_release.outputs.tag_name, '_dio') || !contains(steps.current_release.outputs.tag_name, '_') }}"
-
   publish:
     runs-on: ubuntu-latest
-    needs: prepare
-    if: ${{ needs.prepare.outputs.continue == 'true' }}
+    if: ${{ github.event_name == 'workflow_dispatch' || contains(github.ref, '_dio') || !contains(github.ref, '_') }}
     steps:
       - uses: actions/checkout@v3
 
