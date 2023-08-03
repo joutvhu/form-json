@@ -28,6 +28,9 @@ jobs:
           contents: ${{ secrets.PUB_CREDENTIALS }}
           write_mode: overwrite
 
+      - name: Copy LICENSE file
+        run: cp LICENSE dio/
+
       - name: Install dependencies
         run: dart pub get
         working-directory: dio
