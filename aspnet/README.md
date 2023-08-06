@@ -18,7 +18,7 @@ builder.Services
 
 ## Using
 
-- Use data type `Microsoft.AspNetCore.Http.IFormFile` to define files.
+- Use data type `Microsoft.AspNetCore.Http.IFormFile` to define files in the model.
 
 - Add `[FormJson]` attribute before the parameter
 
