@@ -35,6 +35,8 @@ public class WebConfig implements WebMvcConfigurer {
 
 ## Using
 
+- Use data type `org.springframework.web.multipart.MultipartFile` to define files.
+
 - Using annotation `@FormJson` before the parameter.
 
 ```java
