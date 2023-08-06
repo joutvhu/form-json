@@ -18,7 +18,9 @@ builder.Services
 
 ## Using
 
-Add `[FormJson]` attribute before the parameter
+- Use data type `Microsoft.AspNetCore.Http.IFormFile` to define files.
+
+- Add `[FormJson]` attribute before the parameter
 
 ```c#
 [HttpPost]
