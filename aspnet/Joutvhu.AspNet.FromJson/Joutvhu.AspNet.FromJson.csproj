@@ -6,7 +6,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <Description>Support upload files with JSON data</Description>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
         <Authors>Giao Ho</Authors>
         <Copyright>Copyright (c) 2023 Giáo Hồ</Copyright>
         <PackageReadmeFile>README.md</PackageReadmeFile>

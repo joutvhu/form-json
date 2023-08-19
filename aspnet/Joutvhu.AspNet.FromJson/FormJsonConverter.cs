@@ -50,7 +50,7 @@ namespace Joutvhu.AspNet.FromJson
                 if (file != null)
                     return file;
             }
-            else
+            else if (reader.Value != null)
             {
                 throw new UnsupportedContentTypeException($"Unsupported type @{reader.Value.GetType().Name}");
             }
