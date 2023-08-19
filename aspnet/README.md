@@ -3,7 +3,7 @@
 - Install dependency
 
 ```
-dotnet add package Joutvhu.AspNet.FromJson --version 1.0.0
+dotnet add package Joutvhu.AspNet.FromJson --version 1.0.1
 ```
 
 - Add model binder provider.
