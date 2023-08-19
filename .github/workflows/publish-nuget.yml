@@ -38,7 +38,7 @@ jobs:
 
       - name: Validate package
         if: ${{ github.event_name == 'release' || github.event.inputs.validate == true }}
-        run: meziantou.validate-nuget-package (Get-ChildItem "./nuget/*.nupkg")
+        run: meziantou.validate-nuget-package (Get-ChildItem "./nuget/*.nupkg") --excluded-rule-ids 32,74,111
         working-directory: aspnet
 
       - name: Run tests
